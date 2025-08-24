@@ -2,45 +2,117 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="2;url=fivem://connect/85.190.158.186:10800">
   <title>Join Finally Home RP</title>
   <style>
     body {
       margin: 0;
       height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
+      flex-direction: column;
       background: url("https://i.postimg.cc/SQrv0Wbt/bg1.png") no-repeat center center fixed;
       background-size: cover;
       font-family: 'Trebuchet MS', sans-serif;
       color: white;
       text-align: center;
     }
-    a.join-btn {
-      margin-top: 40px;
-      font-size: 3rem;
+
+    /* Title Styling */
+    h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      margin-bottom: 40px;
+      background: linear-gradient(90deg, #ff7e5f, #feb47b, #ff6ec7, #8e44ad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 15px rgba(255, 128, 0, 0.6),
+                   0 0 25px rgba(255, 64, 128, 0.6);
+      transition: text-shadow 0.3s ease, filter 0.3s ease;
+    }
+    h1:hover {
+      text-shadow: 0 0 25px rgba(255, 160, 80, 0.9),
+                   0 0 40px rgba(255, 80, 160, 0.9);
+      filter: brightness(1.2);
+      cursor: default;
+    }
+
+    a.btn {
+      margin: 20px 0;
+      font-size: 2rem;
       font-weight: bold;
       text-decoration: none;
       color: white;
-      background: rgba(0, 0, 0, 0.6);
       padding: 15px 40px;
       border-radius: 12px;
       text-shadow: 0 0 10px rgba(0, 0, 0, 0.8),
                    0 0 20px rgba(255, 255, 255, 0.5);
       box-shadow: 0 0 20px rgba(0,0,0,0.7);
       transition: all 0.3s ease;
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards, pulse 4s ease-in-out infinite;
     }
-    a.join-btn:hover {
+
+    a.btn:nth-of-type(1) { animation-delay: 0.3s, 1s; }
+    a.btn:nth-of-type(2) { animation-delay: 0.6s, 1.3s; }
+
+    a.fivem-btn {
+      background: rgba(0, 0, 0, 0.6);
+    }
+    a.fivem-btn:hover {
       background: rgba(255, 255, 255, 0.9);
       color: #000;
-      text-shadow: none;
+      text-shadow: 0 0 15px #fff, 0 0 25px #fff;
       box-shadow: 0 0 25px rgba(255,255,255,0.9);
+      transform: scale(1.05);
+    }
+
+    a.discord-btn {
+      background: rgba(88, 101, 242, 0.7);
+    }
+    a.discord-btn:hover {
+      background: rgba(88, 101, 242, 0.95);
+      text-shadow: 0 0 15px #fff, 0 0 25px #fff;
+      box-shadow: 0 0 25px rgba(88, 101, 242, 1);
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(0,0,0,0.7);
+      }
+      50% {
+        transform: scale(1.03);
+        box-shadow: 0 0 30px rgba(255,255,255,0.2);
+      }
+    }
+
+    /* Mobile Optimization */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 3rem; /* slightly smaller title */
+        margin-bottom: 30px;
+      }
+      a.btn {
+        font-size: 1.5rem; /* slightly smaller buttons */
+        padding: 12px 30px;
+      }
     }
   </style>
 </head>
 <body>
-  <a class="join-btn" href="fivem://connect/85.190.158.186:10800">Join Finally Home RP</a>
+  <h1>Finally Home RP</h1>
+  <a class="btn fivem-btn" href="fivem://connect/85.190.158.186:10800">Join Finally Home RP</a>
+  <a class="btn discord-btn" href="https://discord.gg/mxuUCWVX9q">Join the Discord</a>
 </body>
 </html>
